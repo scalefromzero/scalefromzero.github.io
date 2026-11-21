@@ -30,7 +30,7 @@ export const SEASON: Episode[] = [
   { id: "e03", n: 3, floor: 1, site: true, youtube: "", thumb: "img/e03.jpg", title: "What's Really Behind Every App", blurb: "The map of a real app, one box at a time." },
   { id: "e04", n: 4, floor: 1, site: true, youtube: "", thumb: "img/e04.jpg", title: "Why 99.9% Uptime Still Means 9 Hours Down", blurb: "How to measure a system: latency, percentiles, nines." },
   { id: "e05", n: 5, floor: 2, site: true, youtube: "", thumb: "img/e05.jpg", title: "How a Message Crosses the Internet", blurb: "Packets, routers and undersea cables." },
-  { id: "e06", n: 6, floor: 2, site: false, youtube: "", title: "TCP vs UDP", blurb: "Reliable or fast: the two ways to send." },
+  { id: "e06", n: 6, floor: 2, site: true, youtube: "", thumb: "img/e06.jpg", title: "TCP vs UDP", blurb: "Reliable or fast: the two ways to send." },
   { id: "e07", n: 7, floor: 2, site: false, youtube: "", title: "DNS, the Internet's Phone Book", blurb: "How a name becomes an address." },
   { id: "e08", n: 8, floor: 2, site: false, youtube: "", title: "HTTP, the Language of the Web", blurb: "Requests, responses and status codes." },
   { id: "e09", n: 9, floor: 2, site: false, youtube: "", title: "What Really Happens When You Type google.com", blurb: "Every step, including HTTPS." },

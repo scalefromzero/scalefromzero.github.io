@@ -8,8 +8,15 @@ const CARDS = [
   { icon: "🔢", post: "Numbers on the cards", net: "TCP", c: "--storage", d: "So the reader can put them back in order. Next episode." },
 ];
 
+type Card = { icon: string; post: string; net: string; c: string; d: string };
+
 /** The whole idea as a post office. Flip each card to see what it is on the internet. */
 export function postOfficeLab(bench: HTMLElement) {
+  flipCards(bench, CARDS, "That's the whole internet, as a post office.", "The internet doesn't send messages. It forwards small labelled packets, one hop at a time.");
+}
+
+/** Post-office flip cards, shared by episodes that map an analogy. */
+export function flipCards(bench: HTMLElement, CARDS: Card[], doneText: string, take: string) {
   const grid = h("div.flip-grid");
   let flipped = 0;
   const say = h("p.dim", { "aria-live": "polite" }, "Tap a card to flip it.");
@@ -20,10 +27,10 @@ export function postOfficeLab(bench: HTMLElement) {
     card.addEventListener("click", () => {
       const on = card.classList.toggle("turned");
       if (on && !card.dataset.seen) { card.dataset.seen = "1"; flipped++; }
-      say.textContent = flipped === CARDS.length ? "That's the whole internet, as a post office." : `${flipped} of ${CARDS.length} flipped.`;
+      say.textContent = flipped === CARDS.length ? doneText : `${flipped} of ${CARDS.length} flipped.`;
       sfx("pop", 0.2);
     });
     grid.append(card);
   });
-  bench.append(grid, say, takeaway("The internet doesn't send messages. It forwards small labelled packets, one hop at a time."));
+  bench.append(grid, say, takeaway(take));
 }
