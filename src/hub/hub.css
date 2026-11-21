@@ -1,0 +1,55 @@
+.hero { padding-block: clamp(40px, 7vw, 88px) clamp(32px, 5vw, 64px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.hero .copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 .l1 { display: block; color: var(--text); }
+.hero h1 .l2 { display: block; color: var(--net); }
+.hero .lede { font-size: var(--step-1); color: var(--dim); line-height: 1.45; }
+.tower-box { position: relative; aspect-ratio: 1 / 1; max-width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 50% 70%, #18214A 0%, #0A0F1E 70%); }
+.tower-box canvas { width: 100% !important; height: 100% !important; display: block; touch-action: pan-y; }
+.tower-tip { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 12px 14px; border-radius: 12px; background: rgba(10,15,30,0.9); border: 1px solid var(--line); font-size: var(--step--1); color: var(--dim); }
+.tower-tip b { color: var(--text); font-family: var(--head); font-size: var(--step-0); display: block; }
+.tower-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+
+.why .bench-grid { align-items: stretch; }
+.stat-big .v { font-size: var(--step-3); }
+.decisions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 8px; }
+.decision { text-align: left; display: grid; gap: 8px; align-content: start; padding: 18px; border-radius: 12px; background: var(--bg2); border: 1px solid var(--line); color: var(--text); font: inherit; cursor: pointer; min-height: 168px; }
+.decision:hover { border-color: #3A4780; }
+.decision .num { font: 700 0.8rem/1 var(--mono); color: var(--accent); letter-spacing: .1em; }
+.decision h3 { font-size: var(--step-1); }
+.decision .ex { color: var(--dim); font-size: var(--step--1); }
+.decision[aria-expanded="true"] { border-color: var(--accent); }
+
+.house { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.house canvas { width: 100%; height: auto; aspect-ratio: 4 / 3; background: var(--bg2); border-radius: 12px; border: 1px solid var(--line); }
+
+.floor { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 20px; padding-block: 22px; border-top: 1px dashed var(--line); }
+.floor:first-of-type { border-top: 0; }
+.floor-name { display: grid; gap: 6px; align-content: start; }
+.floor-name .eyebrow { color: var(--fc); }
+.floor-name h3 { font-size: var(--step-1); }
+.eps { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.ep { position: relative; display: grid; grid-template-rows: auto 1fr; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--bg2); color: var(--text); text-decoration: none; transition: transform .2s, border-color .2s; }
+.ep:hover { border-color: var(--fc); transform: translateY(-2px); color: var(--text); }
+.ep .thumb { aspect-ratio: 16 / 9; background: linear-gradient(135deg, color-mix(in srgb, var(--fc) 30%, #0E1428), #0E1428); display: grid; place-items: center; font: 700 var(--step-2)/1 var(--head); color: color-mix(in srgb, var(--fc) 70%, white); }
+.ep .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ep .meta { padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; }
+.ep .meta b { font-family: var(--head); font-size: 1.02rem; line-height: 1.25; }
+.ep .meta span { font-size: var(--step--1); color: var(--dim); }
+.ep .tag { position: absolute; top: 10px; left: 10px; }
+.ep .tag.live { color: #04121D; background: var(--good); border-color: var(--good); }
+.ep.soon { cursor: default; }
+.ep.soon .thumb { aspect-ratio: auto; height: 64px; font-size: var(--step-1); }
+.ep.soon:hover { transform: none; border-color: var(--line); }
+
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; counter-reset: m; }
+.method li { list-style: none; padding: 18px; border-radius: 12px; background: var(--bg2); border: 1px solid var(--line); display: grid; gap: 8px; counter-increment: m; }
+.method li::before { content: "Step " counter(m); font: 700 0.78rem/1 var(--mono); letter-spacing: .1em; color: var(--accent); text-transform: uppercase; }
+.method ol { margin: 0; padding: 0; display: contents; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .floor { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .house { grid-template-columns: minmax(0, 1fr); }
+}
