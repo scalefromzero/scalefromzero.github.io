@@ -4,14 +4,14 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 
 | Page | URL (after deploy) |
 |---|---|
-| Season hub + Episode 00 | `https://karamathalip.github.io/scale-from-zero/` |
-| Episode 01, Inside One Computer | `https://karamathalip.github.io/scale-from-zero/e01/` |
-| Episode 02, When the Cache Is Wrong | `https://karamathalip.github.io/scale-from-zero/e02/` |
-| Episode 03, What's Really Behind Every App | `https://karamathalip.github.io/scale-from-zero/e03/` |
-| Episode 04, Why 99.9% Uptime Still Means 9 Hours Down | `https://karamathalip.github.io/scale-from-zero/e04/` |
-| Episode 05, How a Message Crosses the Internet | `https://karamathalip.github.io/scale-from-zero/e05/` |
-| Episode 06, TCP vs UDP | `https://karamathalip.github.io/scale-from-zero/e06/` |
-| Episode NN | `https://karamathalip.github.io/scale-from-zero/eNN/` |
+| Season hub + Episode 00 | `https://scalefromzero.github.io/` |
+| Episode 01, Inside One Computer | `https://scalefromzero.github.io/e01/` |
+| Episode 02, When the Cache Is Wrong | `https://scalefromzero.github.io/e02/` |
+| Episode 03, What's Really Behind Every App | `https://scalefromzero.github.io/e03/` |
+| Episode 04, Why 99.9% Uptime Still Means 9 Hours Down | `https://scalefromzero.github.io/e04/` |
+| Episode 05, How a Message Crosses the Internet | `https://scalefromzero.github.io/e05/` |
+| Episode 06, TCP vs UDP | `https://scalefromzero.github.io/e06/` |
+| Episode NN | `https://scalefromzero.github.io/eNN/` |
 
 ## Run it
 

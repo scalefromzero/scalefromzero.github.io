@@ -8,7 +8,7 @@ const episodes = readdirSync(__dirname, { withFileTypes: true })
   .map((d) => d.name);
 
 export default defineConfig({
-  // Relative base: the same build works at karamathalip.github.io/<repo>/, on a custom domain, or in a preview.
+  // Relative base: the same build works at scalefromzero.github.io/ (or any sub-path), on a custom domain, or in a preview.
   base: "./",
   build: {
     target: "es2022",
