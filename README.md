@@ -11,6 +11,11 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 04, Why 99.9% Uptime Still Means 9 Hours Down | `https://scalefromzero.github.io/e04/` |
 | Episode 05, How a Message Crosses the Internet | `https://scalefromzero.github.io/e05/` |
 | Episode 06, TCP vs UDP | `https://scalefromzero.github.io/e06/` |
+| Episode 07, DNS | `https://scalefromzero.github.io/e07/` |
+| Episode 08, HTTP | `https://scalefromzero.github.io/e08/` |
+| Episode 09, What Happens When You Type google.com | `https://scalefromzero.github.io/e09/` |
+| Episode 10, APIs | `https://scalefromzero.github.io/e10/` |
+| Episode 11, CDNs | `https://scalefromzero.github.io/e11/` |
 | Episode NN | `https://scalefromzero.github.io/eNN/` |
 
 ## Run it
@@ -35,7 +40,7 @@ The build uses relative paths, so it works under `/scale-from-zero/`, on a custo
 
 ```
 index.html            season hub (E00 content, 3D tower, season map)
-e01/ … e06/          one index.html per episode
+e01/ … e11/          one index.html per episode
 src/kit/              shared by every episode
   libs.ts             the animation toolbox, lazy-loaded (see below)
   season.ts           all 25 episodes: titles, floors, site on/off, YouTube links
@@ -75,6 +80,9 @@ Map data: `world-atlas` (Natural Earth, public domain) with `topojson-client` (I
 Licences: all MIT/ISC except p5.js (LGPL-2.1) and GSAP (free "standard" licence, not OSI open source; fine for this use).
 
 ## Add an episode page
+
+From Episode 7 on, pages use `src/kit/episode.ts` (`episodePage({...})`): give it a hero, a list of labs and the quiz, and it builds the page. Shared widgets for these pages live in `src/kit/extra.css`.
+
 
 1. Copy `e01/index.html` to `eNN/index.html`. Change the `<title>`, description, `og:image` and the script path to `/src/eNN/main.ts`.
 2. Create `src/eNN/main.ts` (copy `src/e01/main.ts`) and put one lab per file in `src/eNN/labs/`.

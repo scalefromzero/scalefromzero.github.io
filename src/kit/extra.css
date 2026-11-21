@@ -1,0 +1,26 @@
+/* Shared widgets for Episodes 7 onwards */
+.reqline { display: block; width: 100%; text-align: left; font: 600 0.86rem/1.4 var(--mono); padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); border-left: 4px solid var(--hc); background: var(--bg); color: var(--text); cursor: pointer; overflow-wrap: anywhere; }
+.reqline:hover { background: color-mix(in srgb, var(--hc) 12%, var(--bg)); }
+.json { font: 500 0.8rem/1.5 var(--mono); background: #05070f; border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 320px; overflow: auto; color: var(--dim); }
+.json .k { color: var(--net); } .json .s { color: var(--good); } .json .n { color: var(--storage); }
+.phone { width: min(260px, 100%); margin: 0 auto; border: 3px solid #2a355f; border-radius: 28px; padding: 14px 10px; background: #0b1124; display: grid; gap: 8px; min-height: 360px; align-content: start; }
+.phone .card { display: grid; grid-template-columns: 72px 1fr; gap: 8px; align-items: center; padding: 6px; border-radius: 10px; background: var(--panel); }
+.phone .card i { display: block; aspect-ratio: 16/9; border-radius: 6px; background: linear-gradient(135deg, #38BDF8, #A78BFA); }
+.phone .card b { font-size: 0.8rem; } .phone .card span { font-size: 0.7rem; color: var(--dim); }
+.phone .card.blank b, .phone .card.blank span { color: transparent; background: var(--line); border-radius: 4px; }
+.stops { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.stops > div { padding: 10px 6px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); text-align: center; font-size: 0.78rem; transition: all .25s; }
+.stops > div b { display: block; font: 700 1.1rem/1 var(--mono); margin-bottom: 4px; color: var(--faint); }
+.stops > div.on { border-color: var(--sc); background: color-mix(in srgb, var(--sc) 14%, var(--bg)); }
+.stops > div.on b { color: var(--sc); }
+.swatch { width: 54px; height: 54px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.25); flex: none; }
+.cert { display: grid; gap: 4px; padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: #0c1226; font-size: var(--step--1); }
+.cert .row2 { display: grid; grid-template-columns: 8em 1fr; gap: 8px; } .cert .row2 > span:first-child { color: var(--faint); font: 600 0.72rem/1.6 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.mapbox { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 50% 50%, #121a3d, #070b18 75%); }
+.mapbox svg { display: block; width: 100%; height: auto; }
+@media (max-width: 600px) { .stops { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.flip-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)) !important; margin-bottom: 12px; }
+.flip-grid .flip { min-height: 224px !important; }
+.seg { flex-wrap: wrap; }
+.contract-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px; align-items: start; }
+@media (max-width: 600px) { .contract-grid { grid-template-columns: 1fr; } }

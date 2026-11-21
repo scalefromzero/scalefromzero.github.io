@@ -16,14 +16,14 @@ export function postOfficeLab(bench: HTMLElement) {
 }
 
 /** Post-office flip cards, shared by episodes that map an analogy. */
-export function flipCards(bench: HTMLElement, CARDS: Card[], doneText: string, take: string) {
+export function flipCards(bench: HTMLElement, CARDS: Card[], doneText: string, take: string, faces: [string, string] = ["Post office", "Internet"]) {
   const grid = h("div.flip-grid");
   let flipped = 0;
   const say = h("p.dim", { "aria-live": "polite" }, "Tap a card to flip it.");
   CARDS.forEach((c) => {
-    const card = h("button.flip", { type: "button", style: `--fc: var(${c.c})`, "aria-label": `${c.post}. Tap to see what it is on the internet.` },
-      h("div.face", {}, h("span.k", {}, "Post office"), h("span", { style: "font-size:2rem" }, c.icon), h("b", {}, c.post)),
-      h("div.face.back", {}, h("span.k", {}, "Internet"), h("b", {}, c.net), h("span.d", {}, c.d)));
+    const card = h("button.flip", { type: "button", style: `--fc: var(${c.c})`, "aria-label": `${c.post}. Tap to see what it is in the system.` },
+      h("div.face", {}, h("span.k", {}, faces[0]), h("span", { style: "font-size:2rem" }, c.icon), h("b", {}, c.post)),
+      h("div.face.back", {}, h("span.k", {}, faces[1]), h("b", {}, c.net), h("span.d", {}, c.d)));
     card.addEventListener("click", () => {
       const on = card.classList.toggle("turned");
       if (on && !card.dataset.seen) { card.dataset.seen = "1"; flipped++; }
