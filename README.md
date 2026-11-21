@@ -21,6 +21,11 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 14, Netflix | `https://scalefromzero.github.io/e14/` |
 | Episode 15, WebSockets | `https://scalefromzero.github.io/e15/` |
 | Episode 16, WhatsApp | `https://scalefromzero.github.io/e16/` |
+| Episode 17, SQL databases | `https://scalefromzero.github.io/e17/` |
+| Episode 18, NoSQL | `https://scalefromzero.github.io/e18/` |
+| Episode 19, Replication and sharding | `https://scalefromzero.github.io/e19/` |
+| Episode 20, The CAP theorem | `https://scalefromzero.github.io/e20/` |
+| Episode 21, Object storage | `https://scalefromzero.github.io/e21/` |
 | Episode NN | `https://scalefromzero.github.io/eNN/` |
 
 ## Run it
@@ -45,7 +50,7 @@ The build uses relative paths, so it works under `/scale-from-zero/`, on a custo
 
 ```
 index.html            season hub (E00 content, 3D tower, season map)
-e01/ … e16/          one index.html per episode
+e01/ … e21/          one index.html per episode
 src/kit/              shared by every episode
   libs.ts             the animation toolbox, lazy-loaded (see below)
   season.ts           all 25 episodes: titles, floors, site on/off, YouTube links
@@ -53,6 +58,7 @@ src/kit/              shared by every episode
   theme.css           colours, fonts and components from the videos
   labs.css            shared lab widgets (meters, slots, lanes, charts)
   flow.ts             boxes-and-arrows diagram with travelling tokens
+  chart.ts            Chart.js with the site's dark styling (E17 on)
   labs/scaling.ts     scale up vs scale out lab (E01, E03)
 src/hub/              hub page code (three.js tower, Rough.js house lab)
 src/eNN/              episode code; one file per lab in labs/
@@ -96,6 +102,10 @@ From Episode 7 on, pages use `src/kit/episode.ts` (`episodePage({...})`): give i
 5. `npm run build`, check `npm run preview`, push.
 
 Vite finds every `eNN/index.html` automatically, so nothing else needs changing.
+
+## Chapter times for unreleased episodes
+
+E17–E21 chapter buttons use estimated times (script word counts × 0.386 s per word, calibrated on E16's real chapters; error about ±25 s). Replace each `s:` and `chapter:` in `src/eNN/main.ts` with the real chapters from the episode's YouTube package once it is rendered.
 
 ## Rules the labs follow
 
