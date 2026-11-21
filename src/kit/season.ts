@@ -46,9 +46,9 @@ export const SEASON: Episode[] = [
   { id: "e19", n: 19, floor: 5, site: true, youtube: "", title: "Replication and Sharding, Copies and Slices", blurb: "Copies for reads, slices for writes." },
   { id: "e20", n: 20, floor: 5, site: true, youtube: "", title: "The CAP Theorem, Why You Can't Have Everything", blurb: "What to give up when the network splits." },
   { id: "e21", n: 21, floor: 5, site: true, youtube: "", title: "Object Storage, Where the Internet Keeps Its Files", blurb: "Buckets, keys and eleven nines." },
-  { id: "e22", n: 22, floor: 5, site: false, youtube: "", title: "Message Queues, Do It Later, Never Lose It", blurb: "Producers, consumers and dead letters." },
-  { id: "e23", n: 23, floor: 5, site: false, youtube: "", title: "How Instagram Works", blurb: "Case study: IDs, feeds and likes." },
-  { id: "e24", n: 24, floor: 5, site: false, youtube: "", title: "How YouTube Works, the Season Finale", blurb: "Case study: uploads, transcoding, recommendations." },
+  { id: "e22", n: 22, floor: 5, site: true, youtube: "", title: "Message Queues, Do It Later, Never Lose It", blurb: "Producers, consumers and dead letters." },
+  { id: "e23", n: 23, floor: 5, site: true, youtube: "", title: "How Instagram Works", blurb: "Case study: IDs, feeds and likes." },
+  { id: "e24", n: 24, floor: 5, site: true, youtube: "", title: "How YouTube Works, the Season Finale", blurb: "Case study: uploads, transcoding, recommendations." },
 ];
 
 export const byId = (id: string) => SEASON.find((e) => e.id === id)!;

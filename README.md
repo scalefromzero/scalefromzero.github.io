@@ -26,7 +26,9 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 19, Replication and sharding | `https://scalefromzero.github.io/e19/` |
 | Episode 20, The CAP theorem | `https://scalefromzero.github.io/e20/` |
 | Episode 21, Object storage | `https://scalefromzero.github.io/e21/` |
-| Episode NN | `https://scalefromzero.github.io/eNN/` |
+| Episode 22, Message queues | `https://scalefromzero.github.io/e22/` |
+| Episode 23, Instagram | `https://scalefromzero.github.io/e23/` |
+| Episode 24, YouTube, the season finale | `https://scalefromzero.github.io/e24/` |
 
 ## Run it
 
@@ -50,7 +52,7 @@ The build uses relative paths, so it works under `/scale-from-zero/`, on a custo
 
 ```
 index.html            season hub (E00 content, 3D tower, season map)
-e01/ … e21/          one index.html per episode
+e01/ … e24/          one index.html per episode
 src/kit/              shared by every episode
   libs.ts             the animation toolbox, lazy-loaded (see below)
   season.ts           all 25 episodes: titles, floors, site on/off, YouTube links
@@ -105,7 +107,7 @@ Vite finds every `eNN/index.html` automatically, so nothing else needs changing.
 
 ## Chapter times for unreleased episodes
 
-E17–E21 chapter buttons use estimated times (script word counts × 0.386 s per word, calibrated on E16's real chapters; error about ±25 s). Replace each `s:` and `chapter:` in `src/eNN/main.ts` with the real chapters from the episode's YouTube package once it is rendered.
+E17–E24 chapter buttons use estimated times (script word counts × 0.386 s per word, calibrated on E16's real chapters; error about ±25 s). Replace each `s:` and `chapter:` in `src/eNN/main.ts` with the real chapters from the episode's YouTube package once it is rendered.
 
 ## Rules the labs follow
 

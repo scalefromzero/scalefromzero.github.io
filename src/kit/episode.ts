@@ -6,14 +6,14 @@ type Q = Parameters<typeof quiz>[0];
 
 /** Builds a standard episode page: hero, labs (each mounted when near), interview quiz and the next-episode link. */
 export function episodePage(o: {
-  id: string; next: string; floor: string; accent: string;
+  id: string; next?: string; floor: string; accent: string;
   title: (string | Node)[]; lede: string;
   hero: HTMLElement; onHero?: () => void | Promise<void>; wide?: boolean;
   labs: LabDef[];
   quiz: { lede: string; chapter: string; s: number; items: Q };
   closing: string;
 }) {
-  const ep = byId(o.id), next = byId(o.next);
+  const ep = byId(o.id), next = o.next ? byId(o.next) : undefined;
   topbar(ep);
   const app = document.getElementById("app")!;
   const first = o.labs[0].id;
@@ -42,7 +42,7 @@ export function episodePage(o: {
   bench.append(quiz(o.quiz.items),
     takeaway(o.closing),
     h("div.row", { style: "margin-top:16px" },
-      next.site ? h("a.btn.primary", { href: `../${next.id}/index.html` }, `Episode ${pad(next.n)}: ${next.title} →`) : h("span.chip", {}, `Next: Episode ${pad(next.n)} · ${next.title} · lab opens with the video`),
+      !next ? h("a.btn.primary", { href: "../index.html#season" }, "Back to the start of the season ↺") : next.site ? h("a.btn.primary", { href: `../${next.id}/index.html` }, `Episode ${pad(next.n)}: ${next.title} →`) : h("span.chip", {}, `Next: Episode ${pad(next.n)} · ${next.title} · lab opens with the video`),
       h("a.btn", { href: "../index.html#season" }, "All episodes")));
   app.append(sec);
   footer();
