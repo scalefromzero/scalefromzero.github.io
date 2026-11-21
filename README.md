@@ -8,6 +8,8 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 01, Inside One Computer | `https://karamathalip.github.io/scale-from-zero/e01/` |
 | Episode 02, When the Cache Is Wrong | `https://karamathalip.github.io/scale-from-zero/e02/` |
 | Episode 03, What's Really Behind Every App | `https://karamathalip.github.io/scale-from-zero/e03/` |
+| Episode 04, Why 99.9% Uptime Still Means 9 Hours Down | `https://karamathalip.github.io/scale-from-zero/e04/` |
+| Episode 05, How a Message Crosses the Internet | `https://karamathalip.github.io/scale-from-zero/e05/` |
 | Episode NN | `https://karamathalip.github.io/scale-from-zero/eNN/` |
 
 ## Run it
@@ -32,7 +34,7 @@ The build uses relative paths, so it works under `/scale-from-zero/`, on a custo
 
 ```
 index.html            season hub (E00 content, 3D tower, season map)
-e01/ e02/ e03/        one index.html per episode
+e01/ … e05/          one index.html per episode
 src/kit/              shared by every episode
   libs.ts             the animation toolbox, lazy-loaded (see below)
   season.ts           all 25 episodes: titles, floors, site on/off, YouTube links
@@ -52,20 +54,22 @@ Every library is installed from npm and bundled, but a page only downloads a lib
 
 | Key | Library | Use it for | Used in |
 |---|---|---|---|
-| `three` | three.js | 3D scenes | hub tower, E01 hierarchy, E03 3D map |
-| `gsap` | GSAP + ScrollTrigger | timelines, tweened numbers, scroll stories | hub, E01, E02 hero, E03 map trace |
-| `d3` | D3 | data-driven SVG, log scales, axes | E01 latency ladder, E03 flat map |
-| `chart` | Chart.js | live line and bar charts | E01 cache labs, E02 sale day/TTL/eviction, E03 monitoring |
-| `matter` | Matter.js | 2D physics | E01 power cut |
-| `pixi` | PixiJS | thousands of moving sprites (requests, packets) | E01 + E03 scaling, E02 hit and miss |
-| `anime` | anime.js | staggered DOM/SVG sequences | E01 bits/CPU, E03 restaurant/pipeline |
+| `three` | three.js | 3D scenes | hub tower, E01 hierarchy, E03 3D map, E04 server grid, E05 globe |
+| `gsap` | GSAP + ScrollTrigger | timelines, tweened numbers, scroll stories | hub, E01, E02 hero, E03 map trace, E04 year ring, E05 packets |
+| `d3` | D3 | data-driven SVG, log scales, axes | E01 latency ladder, E03 flat map, E04 p99 histogram, E05 wires/network/globe coastline |
+| `chart` | Chart.js | live line and bar charts | E01 cache labs, E02 sale day/TTL/eviction, E03 monitoring, E04 nines multiply |
+| `matter` | Matter.js | 2D physics | E01 power cut, E04 flash-sale queue |
+| `pixi` | PixiJS | thousands of moving sprites (requests, packets) | E01 + E03 scaling, E02 hit and miss, E05 shared motorway |
+| `anime` | anime.js | staggered DOM/SVG sequences | E01 bits/CPU, E03 restaurant/pipeline, E04 priorities, E05 packets/cable |
 | `rough` | Rough.js | hand-drawn diagrams | hub house, E01 desk, E02 whiteboard |
-| `motion` | Motion | springy UI micro-animations | available |
+| `motion` | Motion | springy UI micro-animations | E04 pizza/budget, E05 address counter/router |
 | `p5` | p5.js | creative-coding sketches | available |
 | `lottie` | lottie-web | After Effects / Lottie animations | available |
 | `lenis` | Lenis | smooth scrolling | available |
 
 Add a library: `npm i <package>`, then add one line to `src/kit/libs.ts`.
+
+Map data: `world-atlas` (Natural Earth, public domain) with `topojson-client` (ISC), for the E05 globe.
 
 Licences: all MIT/ISC except p5.js (LGPL-2.1) and GSAP (free "standard" licence, not OSI open source; fine for this use).
 

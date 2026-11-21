@@ -11,7 +11,7 @@ export async function cacheLab(bench: HTMLElement) {
   const slotsBox = h("div.cache-slots", { "aria-label": "Cache lines" });
   const sizeIn = h("input#csize", { type: "range", min: 1, max: 8, value: 4 }) as HTMLInputElement;
   const sizeOut = h("output", {}, "4 lines (16 values)");
-  const pattern = h("select#pattern", {},
+  const pattern = h("select#cache-pattern", {},
     h("option", { value: "array" }, "Loop through an array (neighbours)"),
     h("option", { value: "reuse" }, "Reuse the same few values"),
     h("option", { value: "random" }, "Random addresses"),
@@ -28,7 +28,7 @@ export async function cacheLab(bench: HTMLElement) {
         h("span.eyebrow", { style: "color:var(--cache)" }, "CPU cache"), slotsBox,
       ),
       h("div", { style: "display:grid; gap:14px; align-content:start" },
-        h("label.field", { for: "pattern" }, "What the program reads", pattern),
+        h("label.field", { for: "cache-pattern" }, "What the program reads", pattern),
         h("label.field", { for: "csize" }, h("span", {}, "Cache size: ", sizeOut), sizeIn),
         h("div.row", {}, runBtn, fastBtn),
         h("div.stats", {}, sHit.el, sMiss.el, sRate.el, sSpeed.el),

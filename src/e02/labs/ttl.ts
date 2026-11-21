@@ -3,7 +3,7 @@ import { h, takeaway, css, fmt } from "../../kit/ui";
 
 /** Time to live: fresher answers vs fewer database trips, over two minutes of a sale. */
 export async function ttlLab(bench: HTMLElement) {
-  const ttl = h("input#ttl", { type: "range", min: 0, max: 5, step: 1, value: 2 }) as HTMLInputElement;
+  const ttl = h("input#ttl-secs", { type: "range", min: 0, max: 5, step: 1, value: 2 }) as HTMLInputElement;
   const STEPS = [1, 2, 5, 10, 30, 60];
   const ttlOut = h("output", {});
   const st = (k: string, c: string) => { const v = h("span.v.tnum", { style: `color:var(${c})` }); return { el: h("div.stat", {}, v, h("span.k", {}, k)), v }; };
@@ -12,7 +12,7 @@ export async function ttlLab(bench: HTMLElement) {
   bench.append(
     h("div.bench-grid", {},
       h("div", { style: "display:grid; gap:14px; align-content:start" },
-        h("label.field", { for: "ttl" }, h("span", {}, "Time to live for the seats-left note: ", ttlOut), ttl),
+        h("label.field", { for: "ttl-secs" }, h("span", {}, "Time to live for the seats-left note: ", ttlOut), ttl),
         h("div.stats", {}, sReads.el, sErr.el, sAge.el),
         h("div", { style: "display:grid; gap:6px; font-size:var(--step--1)" },
           h("span.chip", {}, h("i", { style: "color:var(--ram)" }), "Poster and description: cache for hours"),

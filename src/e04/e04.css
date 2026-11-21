@@ -1,0 +1,12 @@
+.fleet4 { display: grid; grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 6px; }
+.fleet4 .srv { border: 1px solid var(--good); border-radius: 8px; padding: 7px 4px; text-align: center; font: 700 0.74rem/1.25 var(--mono); color: var(--text); background: color-mix(in srgb, var(--good) 10%, var(--bg)); transition: all .25s; }
+.fleet4 .srv span { font: 500 0.64rem/1 var(--mono); color: var(--dim); }
+.fleet4 .srv.new { border-color: var(--ram); box-shadow: 0 0 14px -4px var(--ram); }
+.fleet4 .srv.updating { border-color: var(--storage); background: color-mix(in srgb, var(--storage) 14%, var(--bg)); }
+.fleet4 .srv.dead { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--bg)); color: var(--bad); text-decoration: line-through; }
+.map-box { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: radial-gradient(circle at 50% 60%, #18214A, #0A0F1E 75%); }
+.map-box canvas { width: 100% !important; height: 100% !important; display: block; }
+.box[style*="flex-direction:row"] { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.logs { font: 500 0.78rem/1.55 var(--mono); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; white-space: pre; }
+.logs .err { color: var(--bad); }
+.logs .ok { color: var(--dim); }
