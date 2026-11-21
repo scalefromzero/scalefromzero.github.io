@@ -24,3 +24,6 @@
 .seg { flex-wrap: wrap; }
 .contract-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px; align-items: start; }
 @media (max-width: 600px) { .contract-grid { grid-template-columns: 1fr; } }
+.srvcard { display: grid; gap: 4px; padding: 8px; border-radius: 10px; border: 1px solid var(--sc); background: color-mix(in srgb, var(--sc) 8%, var(--bg)); color: var(--text); text-align: left; cursor: pointer; font: inherit; }
+.srvcard b { font-size: 0.8rem; } .srvcard span { font-size: 0.68rem; color: var(--dim); }
+.srvbar { height: 6px; border-radius: 4px; background: var(--line); overflow: hidden; } .srvbar i { display: block; height: 100%; background: var(--sc); transition: width .3s; }

@@ -16,6 +16,11 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 09, What Happens When You Type google.com | `https://scalefromzero.github.io/e09/` |
 | Episode 10, APIs | `https://scalefromzero.github.io/e10/` |
 | Episode 11, CDNs | `https://scalefromzero.github.io/e11/` |
+| Episode 12, Load balancers | `https://scalefromzero.github.io/e12/` |
+| Episode 13, Consistent hashing | `https://scalefromzero.github.io/e13/` |
+| Episode 14, Netflix | `https://scalefromzero.github.io/e14/` |
+| Episode 15, WebSockets | `https://scalefromzero.github.io/e15/` |
+| Episode 16, WhatsApp | `https://scalefromzero.github.io/e16/` |
 | Episode NN | `https://scalefromzero.github.io/eNN/` |
 
 ## Run it
@@ -40,7 +45,7 @@ The build uses relative paths, so it works under `/scale-from-zero/`, on a custo
 
 ```
 index.html            season hub (E00 content, 3D tower, season map)
-e01/ … e11/          one index.html per episode
+e01/ … e16/          one index.html per episode
 src/kit/              shared by every episode
   libs.ts             the animation toolbox, lazy-loaded (see below)
   season.ts           all 25 episodes: titles, floors, site on/off, YouTube links
