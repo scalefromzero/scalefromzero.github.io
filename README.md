@@ -30,6 +30,10 @@ Interactive companion sites for **Scale From Zero**, the system design series th
 | Episode 23, Instagram | `https://scalefromzero.github.io/e23/` |
 | Episode 24, YouTube, the season finale | `https://scalefromzero.github.io/e24/` |
 
+## Free ebook
+
+`public/book/Scale-From-Zero-Quick-Notes.pdf` is published at `https://scalefromzero.github.io/book/Scale-From-Zero-Quick-Notes.pdf`: 56 A5 pages, two per episode. To update it, rebuild it from the book source (`render.mjs`) and replace this file.
+
 ## Run it
 
 ```bash
@@ -107,7 +111,7 @@ Vite finds every `eNN/index.html` automatically, so nothing else needs changing.
 
 ## Chapter times for unreleased episodes
 
-E17–E24 chapter buttons use estimated times (script word counts × 0.386 s per word, calibrated on E16's real chapters; error about ±25 s). Replace each `s:` and `chapter:` in `src/eNN/main.ts` with the real chapters from the episode's YouTube package once it is rendered.
+All chapter buttons (E00–E24) use the real chapter times from each episode's YouTube package. E24's package lists fewer chapters, so its lab times come from the rendered timeline's scene starts (within about 1 s).
 
 ## Rules the labs follow
 

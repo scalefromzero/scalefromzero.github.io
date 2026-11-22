@@ -16,24 +16,23 @@ const CARDS = [
   { icon: "🗃️", post: "Splitting the cabinets by surname, A–F here, G–M there", net: "Sharding", c: "--cache", d: "Each clerk handles fewer files." },
 ];
 
-// Chapter times are ESTIMATES from the script's word counts (calibrated on E16); replace with the package's chapters once E19 is rendered.
 episodePage({
   id: "e19", next: "e20", floor: "Floor 5 · Data at scale", accent: "--ram",
   title: ["Copies ", h("em", { style: "color:var(--ram)" }, "and slices")],
   lede: "In 2018, GitHub lost the link between two sites for 43 seconds and was degraded for over a day. The question underneath: which copy is the real one? Add replicas, then kill the leader.",
   hero: replicaHero(),
   labs: [
-    { id: "lag", title: "Maya's vanishing comment", lede: "Her read goes to a replica that hasn't caught up yet.", chapter: "1:40", s: 100, colour: "bad", mount: lagLab },
-    { id: "sync", title: "Sync or async", lede: "Wait for the copies, or say done now? Move the far replica to another continent.", chapter: "2:34", s: 154, colour: "net", mount: syncLab },
-    { id: "shardkey", title: "The shard key", lede: "Fifty thousand people sign up today. Which shard takes the writes?", chapter: "3:38", s: 218, colour: "storage", mount: shardKeyLab },
-    { id: "logical", title: "Logical shards", lede: "480 small slices on a few machines. Add one machine and see what moves.", chapter: "4:15", s: 255, colour: "good", mount: logicalLab },
-    { id: "splitbrain", title: "Split brain", lede: "The old leader was only cut off, not dead. Now there are two.", chapter: "5:18", s: 318, colour: "bad", mount: splitBrainLab },
-    { id: "fanout", title: "Questions across every shard", lede: "Top videos across all users means asking every shard.", chapter: "5:54", s: 354, colour: "cache", mount: fanoutLab },
-    { id: "office", title: "The office", lede: "Copies and slices as a busy office. Flip each card.", chapter: "6:56", s: 416, colour: "ram", mount: (b) => flipCards(b, CARDS, "That's replication and sharding, as an office.", "Copies let you read more and survive failures. Slices let you write more.", ["Office", "Database"]) },
+    { id: "lag", title: "Maya's vanishing comment", lede: "Her read goes to a replica that hasn't caught up yet.", chapter: "1:42", s: 102, colour: "bad", mount: lagLab },
+    { id: "sync", title: "Sync or async", lede: "Wait for the copies, or say done now? Move the far replica to another continent.", chapter: "2:37", s: 157, colour: "net", mount: syncLab },
+    { id: "shardkey", title: "The shard key", lede: "Fifty thousand people sign up today. Which shard takes the writes?", chapter: "3:41", s: 221, colour: "storage", mount: shardKeyLab },
+    { id: "logical", title: "Logical shards", lede: "480 small slices on a few machines. Add one machine and see what moves.", chapter: "4:17", s: 257, colour: "good", mount: logicalLab },
+    { id: "splitbrain", title: "Split brain", lede: "The old leader was only cut off, not dead. Now there are two.", chapter: "5:21", s: 321, colour: "bad", mount: splitBrainLab },
+    { id: "fanout", title: "Questions across every shard", lede: "Top videos across all users means asking every shard.", chapter: "5:57", s: 357, colour: "cache", mount: fanoutLab },
+    { id: "office", title: "The office", lede: "Copies and slices as a busy office. Flip each card.", chapter: "7:03", s: 423, colour: "ram", mount: (b) => flipCards(b, CARDS, "That's replication and sharding, as an office.", "Copies let you read more and survive failures. Slices let you write more.", ["Office", "Database"]) },
   ],
   quiz: {
     lede: "First add replication: a leader for writes and replicas for reads, synchronous to at least one nearby copy, asynchronous elsewhere. Handle lag with read-your-own-writes. When writes outgrow one leader, shard by a high-cardinality key that keeps related data together, with hashing and many logical shards. Call out cross-shard queries and transactions, hot shards, and failover with split-brain protection.",
-    chapter: "7:57", s: 477,
+    chapter: "8:08", s: 488,
     items: [
       { q: "What does adding replicas increase?", options: ["Write capacity", "Read capacity and survival when a machine dies", "Both equally"], answer: 1, why: "Every write still goes through one leader." },
       { q: "Maya's comment vanishes after a refresh. Best fix?", options: ["Synchronous replication everywhere", "Read her own recent writes from the leader", "More replicas"], answer: 1, why: "Read-your-own-writes." },

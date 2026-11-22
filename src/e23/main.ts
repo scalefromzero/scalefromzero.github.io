@@ -16,23 +16,22 @@ const CARDS = [
   { icon: "📨", post: "Slow work runs through…", net: "Queues", c: "--good", d: "Sizes, checks, fan-out." },
 ];
 
-// Chapter times are ESTIMATES from the script's word counts (calibrated on E16); replace with the package's chapters once E23 is rendered.
 episodePage({
   id: "e23", next: "e24", floor: "Floor 5 · Case study", accent: "--cache",
   title: ["How Instagram ", h("em", { style: "color:var(--cache)" }, "builds your feed")],
   lede: "More than three billion people a month, and a company of thirteen people when Facebook bought it in 2012. Follow one post from Maya's phone into her followers' feeds, then make Maya a celebrity.",
   hero: fanoutHero(),
   labs: [
-    { id: "ids", title: "Clever IDs", lede: "Thousands of shards, no central counter. Build each ID from time, shard and a counter.", chapter: "2:18", s: 138, colour: "net", mount: idLab },
-    { id: "open", title: "Sam opens the app", lede: "Gather posts from everyone he follows, or read one list that's already waiting.", chapter: "3:11", s: 191, colour: "bad", mount: openLab },
-    { id: "rank", title: "Ranking", lede: "The ready-made list gives candidates. Now score them.", chapter: "4:41", s: 281, colour: "good", mount: rankLab },
-    { id: "likes", title: "Likes pour in", lede: "Thousands of likes a second on one post. Where does the count live?", chapter: "5:11", s: 311, colour: "storage", mount: likesLab },
-    { id: "shared", title: "When things break", lede: "Instagram, WhatsApp and Facebook shared the same network and DNS.", chapter: "6:20", s: 380, colour: "bad", mount: sharedLab },
-    { id: "season", title: "The season, in one app", lede: "How Instagram uses every floor. Flip each card.", chapter: "7:23", s: 443, colour: "cache", mount: (b) => flipCards(b, CARDS, "That's the whole season, inside Instagram.", "Store the photo once, do the slow work later, and build each feed before anyone asks for it, except for the very famous.", ["Instagram", "Building block"]) },
+    { id: "ids", title: "Clever IDs", lede: "Thousands of shards, no central counter. Build each ID from time, shard and a counter.", chapter: "2:29", s: 149, colour: "net", mount: idLab },
+    { id: "open", title: "Sam opens the app", lede: "Gather posts from everyone he follows, or read one list that's already waiting.", chapter: "3:22", s: 202, colour: "bad", mount: openLab },
+    { id: "rank", title: "Ranking", lede: "The ready-made list gives candidates. Now score them.", chapter: "4:51", s: 291, colour: "good", mount: rankLab },
+    { id: "likes", title: "Likes pour in", lede: "Thousands of likes a second on one post. Where does the count live?", chapter: "5:19", s: 319, colour: "storage", mount: likesLab },
+    { id: "shared", title: "When things break", lede: "Instagram, WhatsApp and Facebook shared the same network and DNS.", chapter: "6:25", s: 385, colour: "bad", mount: sharedLab },
+    { id: "season", title: "The season, in one app", lede: "How Instagram uses every floor. Flip each card.", chapter: "7:31", s: 451, colour: "cache", mount: (b) => flipCards(b, CARDS, "That's the whole season, inside Instagram.", "Store the photo once, do the slow work later, and build each feed before anyone asks for it, except for the very famous.", ["Instagram", "Building block"]) },
   ],
   quiz: {
     lede: "Upload photos directly to object storage and process sizes and checks through a queue. Serve images through a CDN. Store users, posts and follows in a database sharded by user ID, with replicas and time-sortable IDs generated per shard. Build feeds with fan-out on write into cached lists, pull celebrity posts at read time, then rank. Keep like counts in a cache with eventual consistency; call out hot keys and cache warm-up.",
-    chapter: "7:47", s: 467,
+    chapter: "7:56", s: 476,
     items: [
       { q: "Why does Instagram build IDs from time + shard + counter?", options: ["Shorter URLs", "Every shard makes unique IDs alone, and they sort by time", "Encryption"], answer: 1, why: "No central counter, no bottleneck." },
       { q: "Fan-out on write means…", options: ["Gathering posts when Sam opens the app", "Adding the post ID to each follower's ready-made feed when Maya posts", "Writing photos to many disks"], answer: 1, why: "Heavy work at post time, fast reads." },
